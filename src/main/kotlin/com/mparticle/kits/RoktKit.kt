@@ -399,7 +399,7 @@ class RoktKit :
         if (filterUser != null) {
             for ((identityNumberKey, identityValue) in filterUser.userIdentities) {
                 val identityType = getStringForIdentity(identityNumberKey)
-                if (identityType.equals(hashedEmailUserIdentityType)) {
+                if (identityType.equals(hashedEmailUserIdentityType, ignoreCase = true)) {
                     identityAttributes["emailsha256"] = identityValue
                 } else {
                     identityAttributes[identityType] = identityValue
